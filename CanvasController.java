@@ -34,7 +34,7 @@ public class CanvasController extends JFrame implements Econ_Constants{
 
 	}
 
-	/*TODO:Add action listeners for combo box*/
+/*TODO:Add action listeners for combo box*/
 	class ComboBoxListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
 
@@ -45,29 +45,22 @@ public class CanvasController extends JFrame implements Econ_Constants{
 
 			JComboBox cb = (JComboBox)e.getSource();
 			String modelName = (String)cb.getSelectedItem();
-
-			if(modelName == "Bertrand"){
-				remove(graph);
-				repaint();
-			}
-			else if(modelName == "Cournot"){
-				remove(graph);
-				repaint();
-			}
-			else if(modelName == "Perfect Competition"){
-				remove(graph);
-				PerfectCompetition_GUI pcgui = new PerfectCompetition_GUI();
-				add(pcgui, BorderLayout.CENTER);
-				revalidate();
-				validate();
-			}
-			else if(modelName == "Monopoly"){
-				remove(graph);
-				repaint();
-			}
-			else if(modelName == "Stackelburg"){
-				remove(graph);
-				repaint();
+			int graph;
+			switch(modelName){
+				case "Bertrand": 
+				case "Cournot":
+				case "Monopoly":
+				case "Stackleburg":
+					remove(graph);
+					repaint();
+					break;
+				case "Perfect Competition":
+					remove(graph);
+					PerfectCompetiton_GUI pcgui = new PerfectCompetition_GUI();
+					add(pcgui, BorderLayout.CENTER);
+					revalidate();
+					validate();
+					break;'
 			}
 		}
 	}
