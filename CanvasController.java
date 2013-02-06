@@ -60,7 +60,7 @@ public class CanvasController extends JFrame implements Econ_Constants{
 					add(pcgui, BorderLayout.CENTER);
 					revalidate();
 					validate();
-					break;'
+					break;
 			}
 		}
 	}
